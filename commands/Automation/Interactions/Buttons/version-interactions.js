@@ -46,7 +46,7 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
 * Shortened "Permissions needed" to just "Permission(s)" in cmd \`commandinfo\`
 * Slightly updated the ordering of sections in \`stats\` command
 * (Source code) Removed a old leftover code for listing roles
-* (Source code) The setup file has been rewritten in Javascript
+* (Source code) The setup file has been rewritten in JavaScript
 * (Source code) Added a setup option to configure "responding to edited messages" duration
 * Updated the list of excluded special characters for leaderboard command
 * Added several wording changes to some command descriptions
