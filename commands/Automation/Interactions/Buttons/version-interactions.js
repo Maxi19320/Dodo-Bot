@@ -10,7 +10,7 @@ module.exports = [{
 * Added a new command called \`morse\`
 
 ### For those running the [source code](https#COLON#//github.com/ddodogames/Dodo-Bot) on their own#COLON#
-* Added a option to use random hex codes in \`$getGuildVar[prefix]dev-panel\` command
+* Added a option to use random hex codes in \`dev-panel\` command
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
@@ -48,7 +48,7 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
 * (Source code) Removed a old leftover code for listing roles
 * (Source code) The setup file has been rewritten in JavaScript
 * (Source code) Added a setup option to configure "responding to edited messages" duration
-* Updated the list of excluded special characters for leaderboard command
+* Updated the list of excluded special characters for \`leaderboard\` command
 * Added several wording changes to some command descriptions
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
