@@ -1,9 +1,8 @@
 const { AoiClient } = require("aoi.js"); // Define aoi.js client
-const config = require("./config.json"); // Load the setup options from config
+const config = require("./config.js"); // Load the setup options from config
 require('dotenv').config() // Enable env support in local hosting
 
-// Needed for handler codes
-const functions = require("./handlers/functions.js");
+// Needed for variables handler
 const vars = require('./handlers/variables.js');
 
 
@@ -20,7 +19,7 @@ const client = new AoiClient({
     db: require("@aoijs/aoi.db"),
     dbType: "KeyValue",
     tables: ["main"], // tables for the database
-    securityKey: process.env.DBsecurityKey || config.DBsecurityKey // Security Key with either env or config
+    securityKey: config.DBsecurityKey || process.env.DBsecurityKey // Security Key with either config or env
   },
   disableFunctions: ["$clientToken"], // For safety reasons
   mobilePlatform: config.MobileStatus, // Whether or not to enable mobile status
@@ -28,8 +27,8 @@ const client = new AoiClient({
    interpreter: config.EnableDebugMode // Whether or not to enable aoi.js debug mode
   },
   respondOnEdit: {
-   commands: config.respondOnEdit,
-   time: 20000
+   commands: config.respondOnEdit.Enabled,
+   time: config.respondOnEdit.RespondUntil
   },
   aoiAutoUpdate: false,
   suppressAllErrors: config.DisableAllErrors // Whether or not to disable errors from aoi.js
@@ -42,7 +41,7 @@ client.loadCommands("./commands/", config.LogCommands);
 Object.keys(vars).forEach((t) =>
   client.variables(vars[t], t)
 )
-functions.forEach((func) => client.functionManager.createFunction(func));
 
+client.functionManager.createFunction(...require('./handlers/functions.js'))
 
  

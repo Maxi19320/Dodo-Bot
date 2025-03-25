@@ -1,7 +1,7 @@
-const config = require("../config.json");
+const config = require("../config.js");
 
 module.exports = {
-  "main": { // This is "table" name, tables can be managed by checking index.js under "tables:" option
+  "main": { // This is "table" name, tables can be managed by checking index.js under "tables:" line
   // Game variables
   trivia_type: "multiple",
   trivia_difficulty: "medium",
@@ -11,15 +11,15 @@ module.exports = {
   // Main variables (do not touch)
   autopingreply: "off",
   includebots: "on",
-  version: "2.2.2",
-  versionCodename: "Electric",
+  version: "2.2.3",
+  versionCodename: "Lighting",
   libraryversiondevcheck: "off",
   buildStatus: "Complete",
-  buildDate: "1736720758981",
+  buildDate: "1742917393506",
   buildBranch: "v2",
   buildRevision: "0",
   showbuildinfo: "off",
-  buildNumber: "2196",
+  buildNumber: "2206",
   embedcolor: config.Embedcolor,
   originalembedcolor: config.Embedcolor,
   release_type: "Stable",

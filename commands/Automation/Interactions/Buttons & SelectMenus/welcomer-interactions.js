@@ -9,7 +9,7 @@ To get started, click on the "Toggle" button! To manage the settings regarding t
 **Current Setup**
 * $get[welcomersystem]
 
-}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:togglewel_$authorID:false:🔄}{button:Settings:4:welsettings_$authorID:false}}]
+}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:togglewel_$authorID:false:🔄}{button:Settings:1:welsettings_$authorID:false}}]
 
 $let[welcomersystem;$advancedReplaceText[$getGuildVar[welcomesystem];off;Disabled;on;Enabled]]
 
@@ -31,9 +31,10 @@ $interactionUpdate[{newEmbed:{title:Welcomer}{description:Welcomer is an way to 
 
 To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
 
-*$get[welcomersystem]*
+**Current Setup**
+* $get[welcomersystem]
 
-}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:togglewel_$authorID:false:🔄}{button:Settings:4:welsettings_$authorID:false}}]
+}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:togglewel_$authorID:false:🔄}{button:Settings:1:welsettings_$authorID:false}}]
 
 
 $let[welcomersystem;$advancedReplaceText[$getGuildVar[welcomesystem];off;Welcomer is currently disabled;on;Welcomer is currently enabled]]
@@ -291,7 +292,10 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglewelcomermessag
 $ifAwaited[$charCount[$getGuildVar[welcomemessage]]>=2000||$getGuildVar[welcometype]==embed;{execute:welcomerembedmodetest};{execute:welcomertextmodetest}]
 
 
-$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[welcomemessage]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<Displayname>;$userDisplayName]]
+$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[welcomemessage]];<server.totalMembers>;$membersCount;<username>;$get[username];<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<Displayname>;$userDisplayName;<globalname>;$get[globalname]]]
+
+$let[username;$advancedReplaceText[$checkCondition[$hasUserTag[$authorID]==false];true;$username[$authorID];false;$userTag[$authorID]]]
+$let[globalname;$advancedReplaceText[$checkCondition[$userGlobalName[$authorID]==];true;$username[$authorID];false;$userGlobalName[$authorID]]]
 
 $onlyIf[$hasPermsInChannel[$getGuildVar[welcomechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[welcomechannel]>:
 \`ViewChannel\`
@@ -329,6 +333,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welcomertestmessageb
 \`<username>\` - Returns the member's username
 \`<mention>\` - Pings the new member
 \`<Displayname>\` - Returns the member's displayname
+\`<globalname>\` - Returns the member's global name (or username if there isn't any)
 \`<id>\` - Returns the new member's id
 \`<creationdate>\` - Returns the date when the member joined Discord
 \`<position>\` - Returns the join position of the member

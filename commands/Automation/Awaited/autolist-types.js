@@ -2,13 +2,19 @@ module.exports = [{
     name: "autoListText",
     type: "awaited",
     code: `
-   $if[{value}==none;none;* {value}]
+$if[{value}==none;none;* {value}]
 `
 },{
     name: "autoListServers",
     type: "awaited",
     code: `
 * $guildName[{value}] - {value}
+    `
+},{
+    name: "autoListSelectedMembers",
+    type: "awaited",
+    code: `
+* <@{value}> (\`{value}\`)
     `
 },{
     name: "autoListChannels",
@@ -30,10 +36,4 @@ channel.name
 ;true]**;false;* \`Deleted Category\`]
     $endif
 `
-},{
-    name: "autoListRoles",
-    type: "awaited",
-    code: `$if[{value}==none;none;$get[roles]]
-
-$let[roles;$if[$roleExists[{value};$guildID]==true;* <@&{value}>;* \`Deleted Role\`]]`
 }]

@@ -9,7 +9,7 @@ To get started, click on the "Toggle" button! To manage the settings regarding t
 **Current Setup**
 * $get[leavesystem]
 
-}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleave_$authorID:false:🔄}{button:Settings:4:leavesettings_$authorID:false}}]
+}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleave_$authorID:false:🔄}{button:Settings:1:leavesettings_$authorID:false}}]
 
 $let[leavesystem;$advancedReplaceText[$getGuildVar[leavesystem];off;Disabled;on;Enabled]]
 
@@ -31,9 +31,10 @@ $interactionUpdate[{newEmbed:{title:Leave}{description:Leave just like Welcomer 
 
 To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
 
-*$get[leavesystem]*
+**Current Setup**
+* $get[leavesystem]
 
-}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleave_$authorID:false:🔄}{button:Settings:4:leavesettings_$authorID:false}}]
+}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleave_$authorID:false:🔄}{button:Settings:1:leavesettings_$authorID:false}}]
 
 
 $let[leavesystem;$advancedReplaceText[$getGuildVar[leavesystem];off;Leave is currently disabled;on;Leave is currently enabled]]
@@ -290,7 +291,10 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==toggleleavemessagety
 $ifAwaited[$charCount[$getGuildVar[leavemessage]]>=2000||$getGuildVar[leavetype]==embed;{execute:leaveembedmodetest};{execute:leavetextmodetest}]
 
 
-$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[leavemessage]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<leave.time>;<t:$truncate[$divide[$datestamp;1000]]:f>;<Displayname>;$userDisplayName]]
+$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[welcomemessage]];<server.totalMembers>;$membersCount;<username>;$get[username];<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<leave.time>;<t:$truncate[$divide[$datestamp;1000]]:f>;<Displayname>;$userDisplayName;<globalname>;$get[globalname]]]
+
+$let[username;$advancedReplaceText[$checkCondition[$hasUserTag[$authorID]==false];true;$username[$authorID];false;$userTag[$authorID]]]
+$let[globalname;$advancedReplaceText[$checkCondition[$userGlobalName[$authorID]==];true;$username[$authorID];false;$userGlobalName[$authorID]]]
 
 $onlyIf[$hasPermsInChannel[$getGuildVar[leavechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[leavechannel]>:
 \`ViewChannel\`
@@ -328,6 +332,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavetestmessagebutt
 \`<username>\` - Returns the member's username
 \`<mention>\` - Pings the member
 \`<Displayname>\` - Returns the member's displayname
+\`<globalname>\` - Returns the member's global name (or username if there isn't any)
 \`<id>\` - Returns the member's id
 \`<creationdate>\` - Returns the date when the member joined Discord
 \`<position>\` - Returns the join position of the member
