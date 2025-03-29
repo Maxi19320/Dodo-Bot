@@ -20,12 +20,12 @@ A clear and concise description of what you expected to happen.
 If applicable, add attachments to help explain your problem (like screenshots).
 
 ### **Build information (please complete the following information):**
- - Build number: [e.g. 2164] (Ignore this if using stable release)
+ - Build number: [e.g. 2164] 
  - Github Branch: [e.g. v2, gitbuilds, rebase]
  - Release type: [e.g. Stable, Pre-release]
  - Version [e.g. 2.1.9]
 
-#### Specifying "Build number" is optional if using a stable build
+#### Specifying "Build number" is optional if using a stable release
 
 ### **Additional context**
 Add any other context about the problem here.
