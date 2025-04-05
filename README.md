@@ -1,34 +1,27 @@
-# Dodo-bot
-A personal bot project made in aoi.js v6 aiming to both entertain and provide users some features to use.
+# Dodo-bot 
+Un proyecto de bot personal realizado en aoi.js v6 con el objetivo de entretener y brindar a los usuarios algunas funciones para usar.
+ 
+# ¿Ya no es multiusos? 
+Cuando empecé el Proyecto Dodo-Bot, pensé que todo era fácil, pero me equivoqué. Mantener Dodo-Bot v1 era un auténtico fastidio, ya que la mayor parte del tiempo hay que corregir las API que no funcionan en los comandos, lo cual puede ser realmente molesto si solo hay una persona trabajando en un proyecto de bot enorme.
+ 
+Con el tiempo, empecé a perder interés en mantener el bot, ya que estaba ocupado con la escuela y demás. Finalmente, descontinué la v1, lo que significa que ya no se actualizará. Sin embargo, con el paso de los días, empecé a pensar en cambiar el propósito del bot para facilitar mi desarrollo. Y así fue como la v2 resurgió oficialmente: empezó desde cero y ya no era multipropósito, pero al menos era un bot divertido. 
 
-# It's no longer multi-purpose?
-When I first started the Dodo-Bot Project, I thought everything was easy, but I was wrong. Maintaining Dodo-Bot v1 was absolutely painful, since you have to fix the APIs not working in the commands most of the time, which can be truly annoying if there is only one person working on a huge bot project.
+Una de las principales razones del fracaso de la v1 fue que se planificaron demasiadas funciones en aquel momento. No supe cómo crearlas correctamente, lo que provocó que la primera versión del bot para Aoi tuviera cada vez más errores con cada nueva actualización, llegando a abandonar su mantenimiento. Esto también incluye la creación de comandos mediante API sin saber cómo gestionar algunos errores, entre muchas otras razones. 
 
-As time went on, I began to lose interest in maintaining the bot since I was busy with school and such. Eventually, I discontinued v1, meaning that it won't be updated anymore. However, as days went on, I began to think about changing the purpose of the bot to be much easier for my development. And so, this is how v2 was officially brought back to life—started from scratch and no longer being multi-purpose but at least a fun bot.
+# Historial de la v2: 
+Se suponía que la v2 se basaría en discord.js, pero debido a algunos problemas, se optó por usar aoi.js v6. A pesar de que casi todas las versiones de Dodo-Bot presentaban numerosos errores (incluidas las primeras versiones de la v1), esta versión busca simplificar todo tanto como antes. 
 
-One of the main reasons for the downfall of v1 is that too many features were planned at the time. I did not know how to create them in the right way, which resulted in the first version of the bot for Aoi getting buggier and buggier with each new update eventually giving up on maintaining it. This also includes creating commands using APIs without figuring out how to handle some errors, along with many other reasons.
+Esta versión del bot probablemente esté diseñada para que la aprendas y la disfrutes; probablemente sea el primer bot de aoi.js v6 en código abierto. Ten en cuenta que estoy haciendo todo lo posible para que sea una versión estable, pero al menos puedes probar las novedades que la v2 te ofrece. 
 
-# History of v2
-v2 was supposed to be based on discord.js, but due to some issues, it has been made to use aoi.js v6. Even though almost every release of Dodo-Bot was bugged with a lot of bugs (including early versions of v1). This version aims to make everything as simple as it was before.
-
-This version of the bot is likely made for you to learn as well as enjoy it; it's probably the first aoi.js v6 bot to be open-sourced here. Note that I'm trying my best to make this a stable release as much as possible, but at least you get to try the new stuff v2 has in store for you!
-
-# Versions
-* **[V1](https://github.com/ddodogames/Dodo-Bot/tree/v1)**: The discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time.
-* **[V2 (current)](https://github.com/ddodogames/Dodo-Bot/tree/v2)**: The current version of the bot, maintained with lot of bug fixes and has alright features.
-* **[V3](https://github.com/ddodogames/Dodo-Bot/tree/v3)**: Intended to try out aoi.js v7. Currently on pause.
-* **[canary](https://github.com/ddodogames/Dodo-Bot/tree/canary)**: Development builds of v2. Not recommended for public use. More information can be found [here](https://ddodogames.github.io/dodo-bot-site/advanced/gitbuilds/).
-* **[canary-rebase](https://github.com/ddodogames/Dodo-Bot/tree/canary-rebase)**: Development builds of Rebase. Not recommended for public use just like pre-release builds of v2.
-* **[rebase](https://github.com/ddodogames/Dodo-Bot/tree/rebase)**: ForgeScript version of the bot. It's mostly made as a emergency build.
-# Requirements
-You can host Dodo-Bot on any hosting as long as the following Requirements are met:
-* Node.js v20 and later is required as older versions are not supported
-* A host ready to handle Bot's Features (obviously)
+# Versiones * **[V1](https://github.com/ddodogames/Dodo-Bot/tree/v1)**: La versión descontinuada de Dodo-Bot. Tuvo un mal comienzo con muchos errores debido a mi inexperiencia en aoi.js en ese momento. * 
+**[V2 (actual)](https://github.com/ddodogames/Dodo-Bot/tree/v2)**: La versión actual del bot, con mantenimiento, muchas correcciones de errores y buenas características. *  **[V3](https://github.com/ddodogames/Dodo-Bot/tree/v3)**: Se pretende probar aoi.js v7. Actualmente en pausa. * **[canary](https://github.com/ddodogames/Dodo-Bot/tree/canary)**: Versiones de desarrollo de la v2. No se recomienda su uso público. Más información [aquí](https://ddodogames.github.io/dodo-bot-site/advanced/gitbuilds/). * **[canary-rebase](https://github.com/ddodogames/Dodo-Bot/tree/canary-rebase)**: Versiones de desarrollo de Rebase. No se recomienda su uso público, al igual que las versiones preliminares de la v2. *  **[rebase](https://github.com/ddodogames/Dodo-Bot/tree/rebase)**: Versión del bot en ForgeScript. Se creó principalmente como una compilación de emergencia. 
+# Requisitos Puedes alojar Dodo-Bot 
+En cualquier hosting siempre que se cumplan los siguientes requisitos: * Se requiere Node.js v20 y posterior, ya que las versiones anteriores no son compatibles. * Un host listo para manejar las características del Bot (obviamente). 
 
 # config.js
-Dodo-Bot allows you to change some options before turning it on. To do this, check out the `config.js` file present in the source code itself which contains available options to change from!
+Dodo-Bot te permite cambiar algunas opciones antes de activarlo. Para ello, consulta el archivo `config.js` del código fuente, que contiene las opciones disponibles. 
 
-# Credits
-Most of code belongs to me (besides the ones credited in credits command). You can also credit me using my discord username: "dodogames".
+# Creditos
+La mayor parte del código me pertenece (excepto los que aparecen en el comando "créditos"). También puedes darme créditos usando mi nombre de usuario de Discord: "dodogames". 
 
-In case of using my code for development purposes, you may agree to not claim that you made the bot; otherwise, I may ask you for credit. Further information about the use of source code is explained in the credits command.
+Si usas mi código para fines de desarrollo, puedes aceptar no atribuirte la creación del bot; de lo contrario, podría solicitarte el crédito correspondiente. Para más información sobre el uso del código fuente, consulta el comando "credits". 
